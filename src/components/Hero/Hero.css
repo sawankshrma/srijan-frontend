@@ -1,0 +1,94 @@
+/* src/components/Hero/Hero.css */
+
+/* 1. Ensure the font is imported at the very top */
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+/* Your existing App.css styles follow below */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  color: white;
+  position: relative;
+  
+  /* 2. Added Background Image */
+  background-image: url('../../assets/hero-bg.jpg.png');
+  background-size: cover; /* Ensures the image covers the container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents image tiling */
+}
+
+/* 1. Define the Keyframe Animation */
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.hero-mandala {
+  position: absolute;
+  top: 31%;
+  left: 50%;
+  /* NOTE: The initial transform is part of the keyframes now */
+  transform: translate(-50%, -50%); 
+  
+  /* DECREASED SIZE: Reduced width and max-width */
+  width: 55%; 
+  max-width: 750px;
+  
+  height: auto;
+  z-index: 1;
+  
+  /* CHANGED: Decreased opacity from 0.3 to 0.15 for greater transparency */
+  opacity: 0.15;
+  
+  overflow: hidden;
+
+  /* 2. Apply the Animation */
+  animation: spin 30s linear infinite; /* Adjust time (30s) and speed (linear) as needed */
+}
+
+
+.hero-logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+.hero-logo {
+  position: relative;
+  width: 100%;
+  /* DECREASED SIZE: Reduced max-width */
+  max-width: 600px;
+  height: auto;
+}
+
+.hero-title {
+  font-family: 'Pirata One', cursive;
+  font-weight: 400;
+  /* DECREASED SIZE: Reduced font-size */
+  font-size: 42px;
+  color: #FED000;
+  letter-spacing: 4%;
+  margin: 10px 0;
+  position: relative;
+  z-index: 2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-subtitle {
+  font-family: 'Pirata One', cursive;
+  /* DECREASED SIZE: Reduced font-size */
+  font-size: 22px;
+  color: #FFDF49;
+  margin: 0 0 30px 0;
+  font-weight: 300;
+}
